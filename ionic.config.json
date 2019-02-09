@@ -1,5 +1,7 @@
 {
   "name": "confer",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

@@ -1,0 +1,214 @@
+
+page-profile-show{
+    * {
+      box-sizing: border-box;
+      -webkit-transition: 0.3s cubic-bezier(0.75, 0, 0.2, 1), color 0.3s ease;
+      transition: 0.3s cubic-bezier(0.75, 0, 0.2, 1), color 0.3s ease;
+    }
+
+    .content-md{
+    }
+
+    .ml-35{
+      margin-left: 35px;
+    }
+
+    .ml-15{
+      margin-left: 15px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+    .rela-block {
+      display: block;
+      position: relative;
+      margin: auto;
+      /* top: ;
+      left: ;
+      right: ;
+      bottom: ; */
+      padding-bottom: 5px;
+    }
+
+    .rela-block1{
+      display: block;
+      position: relative;
+      background-color: #CBDAF3;
+      box-shadow: 0 2px 6px -2px rgba(0,0,0,0.26);
+      margin: 10px;
+
+    }
+
+    .floated {
+      display: inline-block;
+      position: relative;
+      margin: false;
+      /* top: ;
+      left: ;
+      right: ;
+      bottom: ; */
+    }
+    .content {
+      z-index: 1;
+      padding: 30px 0 0 0;
+    }
+    .profile-card {
+      padding-top: 10px;
+      margin: 50px 0 0 0;
+      min-height: 100%;
+    }
+    .profile-pic img{
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      height: 150px;
+      width: 150px;
+      border: 15px solid #ccdcf2;
+      border-radius: 100%;
+    }
+
+    .profile-edit{
+      display: false;
+      position: absolute;
+      margin: false;
+      top: -70px;
+      right: 27%;
+      left: false;
+      bottom: false;
+        ion-icon {
+          font-size: 1.5rem;
+          padding: 6px 7.5px;
+          vertical-align: middle;
+          border-radius: 50%;
+          border: 1px solid #163871;
+          color: #163871;
+      }
+    }
+
+    input[type="file"] {
+      display: none !important;
+    }
+
+    .profile-name-container {
+      margin: auto;
+      padding: 60px 0 10px 0;
+      text-align: center;
+    }
+    .user-name {
+      font-family: "Montserrat";
+      font-size: 24px;
+      letter-spacing: 3px;
+      font-weight: 400;
+      line-height: 30px;
+      margin-bottom: 0;
+    }
+
+    .user-name ion-icon{
+      color: #163871;
+    }
+    .user-desc {
+      letter-spacing: 1px;
+      color: #000;
+      margin-bottom: 5px;
+    }
+    .profile-card-stats {
+      text-align: center;
+      text-transform: uppercase;
+      color: #163871;
+      font-weight: 900;
+    }
+    .profile-card-stats p{
+        color: #163871;
+        font-weight: 900;
+        line-height: 1px;
+    }
+    .post::after,
+    .friend::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background: #999;
+    }
+
+    .desc-title{
+      position: relative;
+      margin: 25px 0 20px 0 !important;
+    }
+
+    .desc-title::after{
+      position: absolute;
+      content: '';
+      bottom: -4px;
+      left: 39%;
+      width: 80px;
+      height: 2px;
+      background: #163871;
+    }
+    .desc-title h4{
+      text-align: center;
+    }
+
+    .desc-content span{
+      color: #000000;
+      position: relative;
+      font-weight: 700;      }
+    .desc-content.ml-15 span::after{
+      position: absolute;
+      content: '';
+      top: 4px;
+      left: -15px;
+      width: 3px;
+      height: 3px;
+      padding: 3px;
+      border-radius: 50%;
+      background: #163871;
+    }
+
+    .desc-content li {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      padding: 5px 0;
+    }
+
+    .tags {
+      background: #163871 none repeat scroll 0 0;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 13px;
+      color: #fff !important;
+      margin: 6px 0 0;
+      margin-right: 5px;
+      padding: 2px 5px;
+  }
+
+  .desc-content > li > a {
+    border-radius: 0;
+    display: block;
+    font-size: 14px;
+    padding: 6px 18px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .desc-content > li > a > ion-icon {
+    font-size: 16px;
+    padding-right: 8px;
+  }
+
+  .post{
+    cursor: pointer;
+  }
+
+  .answers{
+    cursor: pointer;
+  }
+    
+}

@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-navbar>
+        <page-header></page-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+     
+    <ion-card class="cards-bg social-cards" *ngFor="let que of query">
+        <ion-item>
+
+            <ion-avatar item-start>
+                <img src="../../assets/imgs/avatar-1.png">
+            </ion-avatar>
+            <h2 (click)="goToProfile()">
+                {{ getUserProfile(que.user) }}
+            </h2>
+            <ion-note>
+                {{que.time}} ago
+            </ion-note>
+            
+        </ion-item>
+        <hr>
+        
+        <ion-card-content [navPush]="singleQueryPage" [navParams]="que._id">
+            <ul>
+                <li>
+                    <h2><b>{{que.title}}</b></h2><br>
+                    <p>{{que.detail}}</p>
+                    <img src="../../assets/imgs/card-img.jpg" alt="image">
+                </li>
+            </ul>
+            <ion-row class="desc-content">
+                <ion-col>
+                    <ul>
+                        <li>
+                            <span class="tags" *ngFor="let tag of que.tags">{{ tag }}</span>
+                        </li>
+                    </ul>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+        <ion-row>
+
+            <ion-col>
+                <hr>
+                <button  ion-button clear small icon-start>
+                    <ion-icon name='thumbs-up'></ion-icon>
+                    {{que.helpfull}} Helpfull
+                </button>
+                <button ion-button clear small icon-start>
+                <ion-icon name='text'></ion-icon>
+                    {{que.answer}} Answers
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <ion-fab right bottom>
+        <button ion-fab mini>
+            <ion-icon name="add"></ion-icon>
+        </button>
+        <ion-fab-list  side="top">
+            <form #addQuestionForm="ngForm" (ngSubmit)="addQuestion()">
+                <ion-input name="title" placeholder="Title" [(ngModel)]="question.title" required></ion-input><br>
+
+                <ion-textarea name="detail" placeholder="Add Your Question?" [(ngModel)]="question.detail" required></ion-textarea><br>
+
+                <ion-input type="file" placeholder="add image"></ion-input><br>
+
+                <p>Separate by comma. Ex: Confer, Country, Social</p>
+                <ion-input name="tags" placeholder="Tags" [(ngModel)]="question.tags" required></ion-input><br>
+
+                <button ion-button name="submit" type="submit">Add</button>
+            </form>
+        </ion-fab-list>
+    </ion-fab>
+    
+</ion-content>

@@ -1,0 +1,45 @@
+page-search {
+    p {
+        padding-left: 10px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    hr {
+        margin-bottom: 10px;
+    }
+
+    .searchbar-md {
+        padding-bottom: 0;
+    }
+
+    .searchbar-md .searchbar-input {
+        border-radius: 0;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #999 !important;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .list-md > .item-block:last-child, .list-md > .item-wrapper:last-child .item-block {
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+    
+    .list-md > .item-block:first-child {
+        border-top: none;
+    }
+
+    .list-md {
+        margin: 0;
+    }
+
+    ion-item p{
+        padding-top: 10px;
+        padding-left: 0px;
+    }
+
+    .searchbar-md .searchbar-search-icon {
+        display: none !important;
+    }
+}

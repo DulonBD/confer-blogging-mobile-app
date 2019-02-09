@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    
+    <p>Querys For "Search Result"</p><hr>
+    <ion-list *ngFor="let suggestion of suggestions" no-padding>
+        <ion-item>
+          <h2>There will be question Title</h2>
+          <p>24 Helpful || 13 Comments</p>
+        </ion-item>
+    </ion-list>
+
+    <p>Profiles For "Search Result"</p><hr>
+    <ion-list *ngFor="let suggestion of suggestions" no-padding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/{{suggestion.image}}.png" alt="image">
+          </ion-avatar>
+          <h2>{{suggestion.name}}</h2>
+          <p>{{suggestion.bio}}</p>
+          <ion-note item-end>
+            <button ion-button (click)="goToProfile()">
+              View-Profile
+            </button>
+          </ion-note>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+

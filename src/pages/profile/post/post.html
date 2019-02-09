@@ -1,0 +1,87 @@
+<ion-header>
+        <ion-navbar>
+            <page-header></page-header>
+        </ion-navbar>
+    </ion-header>
+    
+<ion-content>
+        
+    <ion-card class="cards-bg social-cards" *ngFor="let post of posts">
+        <ion-item>
+
+            <ion-avatar item-start>
+                <img src="../../assets/imgs/{{post.image}}.png">
+            </ion-avatar>
+            <ion-note  class="dlt-note" float-right color="primary">
+                <ion-icon name="trash"></ion-icon>
+            </ion-note>
+            <h2 (click)="goToProfile()">
+                {{post.name}}
+            </h2>
+            <ion-note>
+                {{post.time}} ago
+            </ion-note>
+            <!-- <p>{{post.date.month}} {{post.date.day}}, {{post.date.year}}</p> -->
+            
+        </ion-item>
+        <hr>
+        
+        <ion-card-content>
+            <ul>
+                <li>
+                    <p>{{post.post}}</p>
+                    <img src="../../assets/imgs/{{post.postimg}}.jpg" alt="">
+                </li>
+            </ul>
+            <ion-row class="desc-content">
+                <ion-col>
+                    <ul>
+                        <li>
+                            <span class="tags" *ngFor="let tag of post.tags">{{ tag }}</span>
+                        </li>
+                    </ul>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+        <ion-row>
+
+            <ion-col>
+                <hr>
+                <button  ion-button clear small icon-start>
+                    <ion-icon name='thumbs-up'></ion-icon>
+                    {{post.helpfull}} Helpfull
+                </button>
+                <button ion-button clear small icon-start>
+                <ion-icon name='text'></ion-icon>
+                    {{post.answer}} Answers
+                </button>
+            </ion-col>
+            
+        </ion-row>
+
+        <!-- <div class="comment-sec pt">
+            <ion-list>
+                <ion-input type="text" value="" placeholder="Add a answer"></ion-input>
+            </ion-list>
+            <button class="add-on-btn"> Add </button>
+            <div class="comments">
+                <ion-item>
+                    <ion-avatar item-start>
+                        <img src="../../assets/imgs/user-img/client-03.jpg">
+                    </ion-avatar>
+                    <h2>{{query.name}}</h2>
+                    <p>{{query.date.month}} {{query.date.day}}, {{query.date.year}}</p>
+                </ion-item>
+                <div class="comment-item">
+                    <p>{{query.postComment}}</p>
+                    <a [navPush]="singleQueryPage" [navParams]="query">
+                        View all
+                    </a>
+                </div>
+            </div>
+        </div> -->
+
+    </ion-card>
+    <br>
+    
+</ion-content>

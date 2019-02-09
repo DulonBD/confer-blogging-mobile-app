@@ -1,0 +1,137 @@
+page-sign-in{
+
+    .content-md,
+    .content-ios{
+        background: #CBDAF3 !important;
+        // background-color: #f2f2f2 !important;
+        // -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+        // clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+        // -webkit-transition: background-color 200ms ease;
+        // transition: background-color 200ms ease;
+        // background: linear-gradient(-45deg, #ff8248 55%, transparent 150%), 
+        // linear-gradient(-45deg, #512DA8 55%, transparent 40%) !important;
+        // background: linear-gradient(-45deg, #ff8248 33%, transparent 120%), 
+        // linear-gradient(-45deg, #512DA8 100%, transparent 33%) !important;
+    }
+
+    .mt-100{
+        margin-top: 30px;
+    }
+
+    .padding{
+        padding: 6px;
+    }
+
+    .logo-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 5px;
+        margin-top: calc(100% - 80%);
+    }
+    .block-msg{
+        padding-top: 25px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .block-msg span:nth-last-child(1){
+        color: #1c768f;
+        cursor: pointer;
+    }
+
+    .input.ng-invalid.ng-touched{
+        border-bottom: 1px solid red
+    }
+
+    .item-ios.item-block .item-inner,
+    .item-md.item-block .item-inner,
+    .item-wp.item-block .item-inner {
+        padding-right: 0;
+        padding-right: 0;
+    }
+    .button-ios-primary,
+    .button-md-primary {
+        color: #fff;
+    }
+
+    .item-md,
+    .item-ios {
+        padding-left: 0;
+        background: transparent;
+    }
+
+    // .recipe-overview {
+    //     background-color: #ff8248;
+    //     -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+    //             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+    //     -webkit-transition: background-color 200ms ease;
+    //     transition: background-color 200ms ease;
+    // }
+
+    form{
+        width: calc(100% - 20px);
+        // margin-top: calc(100% - 90%);
+    }
+
+    .main-form{
+        position: relative;
+    }
+    .label-md,
+    .label-ios {
+        margin: 0;
+    }
+
+    .login-group {
+        background: #ffffff;
+        color: #999999;
+        border-radius: 12px;
+        padding: 10px 20px;
+        padding-bottom: 40px; 
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);     
+    }
+
+    .form-group {
+        margin-bottom: 0;
+        border-bottom: 2px solid #efefef;
+        padding-right: 20px;
+        position: relative;
+    }
+
+    .button-md,
+    .button-ios {
+        position: absolute;
+        right: -50px;
+        top: 68%;
+        padding: 11px 0;
+        width: 60px;
+        height: 60px;
+        margin-top: -32px;
+        border: 8px solid #CBDAF3;
+        border-radius: 50%;
+        transition: all ease-in-out 500ms;
+        box-shadow: none !important;
+        -webkit-box-shadow:none !important;
+    }
+
+    ion-icon{
+        font-size: 1.6em;
+        animation: big-small 1500ms infinite;
+    }
+
+    @keyframes big-small {
+        0%{
+            opacity: 1;
+            transform: scale(0);
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+}

@@ -1,0 +1,72 @@
+page-header{
+    .pull-left{
+        float: left
+    }
+    .pull-right{
+        float: right
+    }
+    .header > .box {
+        color: #000;
+        font-family: 'Oswald', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+        width: 100%;
+    }
+    .header > .image > .avatar{
+        width: 40px;
+        height: 40px;
+        display: block;
+        margin-left: 10px;
+        border-radius: 100%;
+    }
+    .header > .box > form {
+        height: inherit;
+        width: inherit;
+        z-index: 8;
+    }
+    .header > .box > form > .container {
+        white-space: nowrap;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: inherit;
+        -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+    }
+    .header > .box > form > .container input {
+        position: absolute;
+        right: 10px;
+        left: auto;
+        top: -5px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 4px;
+        height: 34px;
+        background: rgba(0,0,0,0);
+        border: 1px solid #f2f2f2;
+        font-size: 10pt;
+        padding: 0 34px 0 10px;
+        border-radius: 0;
+        color: #000;
+        -webkit-transition: width 0.55s ease;
+        -moz-transition: width 0.55s ease;
+        transition: width 0.55s ease;
+    }
+    .header > .box > form > .container input:focus,
+    .header > .box > form > .container input:active {
+        outline: none;
+        width: 40%;
+    }
+    .header > .box > form .container  input:hover{
+        width: 40%;
+    }
+    .header > .box > .container .icon {
+        float: right;
+        padding-right: 10px;
+    }
+    .header > .box > form > input {
+    }
+}

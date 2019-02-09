@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Confer
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="rela-block content">
+        <div class="rela-block profile-card">
+            <div class="rela-block1">
+                <div class="profile-pic">
+                    <img src="../../assets/imgs/avatar-2.png" alt="Profile Pic">
+                </div>
+                <div class="profile-edit">
+                    <ion-icon name="create">
+                        <ion-input type="file" style="opacity:0 !important;"></ion-input>
+                    </ion-icon>
+                </div>
+                <div class=" profile-name-container">
+                    <ion-row>
+                        <ion-col col-12>
+                            <div class="rela-block user-name">
+                                {{profile.name}}
+                            </div>
+                        </ion-col>
+                        <ion-col col-12>
+                            <div class="rela-block user-desc">
+                               "{{profile.bio}}"
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div class="rela-block profile-card-stats">
+                    
+                    <ion-row>
+                        <ion-col>
+                            <div class="post" (click)="goToPost()">
+                                {{ profile.postTotal }}
+                                <p>post</p>
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="answers" (click)="goToAnswer()">
+                                {{profile.answersTotal}}
+                                <p>answers</p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                </div><!-- profile-card-stats -->
+            </div>
+            <div class="rela-block">
+                <div class="desc-title">
+                    <h4>About</h4>
+                </div>
+                <ul class="desc-content ml-15">
+                    <li>
+                    <span>Deratment :</span> {{profile.dept}}</li>
+                    <li>
+                    <span>Batch :</span> {{profile.batch}}
+                    </li>
+                    <li>
+                    <span>Birth Of Date :</span>{{profile.dob}}
+                    </li>
+                    <li>
+                    <span>Email :</span> {{profile.email}}
+                    </li>
+                </ul>
+                <div class="desc-title">
+                    <h4>Tags</h4>
+                </div>
+                <ul class="desc-content">
+                    <li *ngFor="let tag of profile.tags">
+                        <span class="tags">{{tag}}</span>
+                    </li>
+                </ul>
+                <ion-row>
+                    <ion-col>
+                        <div class="ml-35">
+                            <button ion-button small icon-start (click)="openModal()"
+                            style="background: #f5f4fa; color: #163871">
+                                <ion-icon name="brush"></ion-icon>Edit-Profile
+                            </button>
+                            <button ion-button small icon-start (click)="logout()" style="background: #f5f4fa; color: #163871">
+                                <ion-icon name="log-out"></ion-icon>Logout
+                            </button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </div><!-- profile-card -->
+    </div><!-- rela-block -->
+
+</ion-content>

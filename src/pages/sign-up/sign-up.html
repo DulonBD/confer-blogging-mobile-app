@@ -1,0 +1,47 @@
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div class="logo-section">
+                    <img src="../../assets/imgs/logo1.png" alt="logo">
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <form #SignUpForm="ngForm" (ngSubmit)="onSignUp()" class="login-group mt-30">
+        
+        <div class="main-form">
+            <ion-item>
+                <ion-label floating>Full-Name</ion-label>
+                <ion-input type="text" name="fullName" [(ngModel)]="signUpAcceptence.fullName" required></ion-input>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="email" name="email" [(ngModel)]="signUpAcceptence.email" required></ion-input>
+            </ion-item>
+    
+            <ion-item >
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" name="password" [(ngModel)]="signUpAcceptence.password" required></ion-input>
+            </ion-item>
+    
+            <ion-item >
+                <ion-label floating>Confirm Password</ion-label>
+                <ion-input type="password" name="confirmPassword" ngModel required></ion-input>
+            </ion-item>
+            <button ion-button block type="submit">
+            <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+        </div>
+
+    </form>
+
+    <div class="block-msg">
+        <span>Already have an account ?</span>
+        <span (click)="GoSignIn()">Sign in here</span>
+    </div>
+
+</ion-content>

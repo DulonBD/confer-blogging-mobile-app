@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card  class="cards-bg social-cards">
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="../../../../assets/imgs/{{query.image}}.png">
+            </ion-avatar>
+            <h2>{{query.name}}</h2>
+            <ion-note>
+                {{query.time}}h ago
+            </ion-note>
+        </ion-item>
+        <hr>
+        
+        <ion-card-content>
+            <ul>
+                <li>
+                    <p>{{query.post}}</p>
+                    <img src="" alt="" srcset="">
+                </li>
+            </ul>
+            <ion-row class="desc-content">
+                <ion-col>
+                    <ul>
+                        <li>
+                            <span class="tags" *ngFor="let tag of query.tags">{{ tag }}</span>
+                        </li>
+                    </ul>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+
+        <ion-row>
+            <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                    <ion-icon name='thumbs-up'></ion-icon>
+                    {{query.helpfull}} Helpfull
+                </button>
+                <button ion-button color="primary" clear small icon-start  
+                [navPush]="singleQueryPage" 
+                [navParams]="query">
+                <ion-icon name='text'></ion-icon>
+                    {{query.answer}} Answers
+                </button>
+            </ion-col>
+        </ion-row>
+
+        <div padding class="comment-sec">
+            <ion-list>
+                <ion-input type="text" value="" placeholder="Add a answer"></ion-input>
+            </ion-list>
+            <button class="add-on-btn"> Add </button>
+            <br>
+            <hr> 
+            <div class="comments">
+                <ion-item>
+                    <ion-avatar item-start>
+                        <img src="../../../../assets/imgs/{{query.postComment.image}}.png">
+                    </ion-avatar>
+                    <h2>{{ query.postComment.name}}</h2>
+                    <p>{{query.postComment.date.month}} {{query.postComment.date.day}}, {{query.postComment.date.year}}</p>
+                </ion-item>
+                <div class="comment-item">
+                    <p>{{query.postComment.comment}}</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+    </ion-card>
+
+</ion-content>

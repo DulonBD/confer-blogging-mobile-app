@@ -1,0 +1,42 @@
+page-answer-query{
+    .social-cards ion-col {
+        padding: 0;
+    }
+
+    ion-input{
+        border: 1px solid #8e9093;
+        height: 45px;
+        padding: 0 4px;
+    }
+
+    .comment-sec{
+        position: relative;
+    }
+    .comment-sec .add-on-btn{
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        height: 46px;
+        width: 55px;
+    }
+
+    .card-content-ios,
+    .card-content-md ,
+    .card-content-wp {
+        background: #f2f2f2;
+        margin: 5px 15px;
+        border-radius: 15px;
+        background-color:  rgba(250, 188, 9, 0.1);
+    }
+
+    .comment-sec  .comments {
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .comment-item{
+        padding: 0;
+        margin: 0 0 5px 50px;
+        text-transform: capitalize;
+    }
+}

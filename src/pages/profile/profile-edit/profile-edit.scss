@@ -1,0 +1,27 @@
+page-profile-edit{
+    .scroll-content{
+        padding-bottom: 0 !important;
+    }
+
+    .content-md{
+        background: #fff !important;
+    }
+
+    .list-ios > .item-block:first-child,
+    .list-md > .item-block:first-child,
+    .list-wp > .item-block:first-child {
+        border-top:none;
+    }
+
+    .list-ios > .item-block:last-child,
+    .list-md > .item-block:last-child,
+    .list-wp > .item-block:last-child {
+        border-bottom: none;
+    }
+
+    .item-ios,
+    .item-md,
+    .item-wp{
+        padding-left: 0;
+    }
+}
