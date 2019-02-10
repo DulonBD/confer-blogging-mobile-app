@@ -13,6 +13,7 @@ import { ProfileServicePage } from "../../services/profile-service";
 
 export class QueryPage implements OnInit {
     query;
+    username;
     profile;
     question = {title:'', detail:'', tags: ''};
     singleQueryPage = SingleQueryPage;
@@ -53,8 +54,24 @@ export class QueryPage implements OnInit {
     getUserProfile(email) {
         this.profileService.getProfile(email)
         .subscribe(res => {
-            return res.response.name;
+            this.username = res.response.name;
         });
+
+        return this.username;
+    }
+
+    getTime(res) {
+        const resDate = res.split('T', 1);
+        const resDate1 = new Date(resDate);
+        const today = new Date();
+        const timeDiff = Math.abs(today.getTime() - resDate1.getTime());
+        const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        
+        if(diffDays <= 1) {
+            return 'Today'
+        } else {
+            return diffDays - 1+" Day ago";
+        }
     }
 
     goToProfile() {

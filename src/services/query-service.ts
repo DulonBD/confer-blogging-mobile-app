@@ -9,6 +9,10 @@ export class QueryServicePage{
         return this.http.get<{response: any}>('http://localhost:3000/confer/questions/');
     }
 
+    getQuestionDts(id) {
+        return this.http.get<{response: any}>('http://localhost:3000/confer/question/'+id);
+    }
+
     addQuestion(title, detail, tags, user) {
         const qus = { title: title, detail: detail, tags: tags, user: user};
 

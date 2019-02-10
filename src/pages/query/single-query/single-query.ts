@@ -1,27 +1,19 @@
 import { Component, OnInit } from "@angular/core";
-import { NavParams, Icon } from "ionic-angular";
+import { NavParams } from "ionic-angular";
+import { QueryServicePage } from "../../../services/query-service";
 
 @Component({
     selector: 'page-single-query',
     templateUrl: 'single-query.html',
 })
 export class SingleQueryPage implements OnInit{
-    query: {
-        name:string,
-        image:Icon,
-        post:string,
-        like:number,
-        answer:number,
-        date: {
-            month:string,
-            day:number,
-            year:number
-        },
-        time:number,
-        postComment:string
-    };
-    constructor(public navParams: NavParams){}
+    query;
+    constructor(public navParams: NavParams, public queryService: QueryServicePage){}
+
     ngOnInit() {
-        this.query = this.navParams.data;
+        this.queryService.getQuestionDts(this.navParams.data)
+        .subscribe(val => {
+            this.query = val.response;
+        });
     }
 }
