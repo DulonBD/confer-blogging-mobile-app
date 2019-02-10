@@ -11,9 +11,9 @@
             <ion-avatar item-start>
                 <img src="../../assets/imgs/{{query.image}}.png">
             </ion-avatar>
-            <h2>{{query.name}}</h2>
+            <h2>{{getUserProfile(query.email)}}</h2>
             <ion-note>
-                {{query.time}}h ago
+                {{getTime(query.time)}}
             </ion-note>
         </ion-item>
         <hr>
@@ -21,9 +21,9 @@
         <ion-card-content>
             <ul>
                 <li>
-                    <h2><b>{{query.posttitle}}</b></h2><br>
-                    <p>{{query.post}}</p>
-                    <img src="../../../assets/imgs/{{query.postimg}}.jpg" alt="" srcset="">
+                    <h2><b>{{query.title}}</b></h2><br>
+                    <p>{{query.detail}}</p>
+                    <img src="../../../assets/imgs/avatar-1.png" alt="" srcset="">
                 </li>
             </ul>
             <ion-row class="desc-content">
