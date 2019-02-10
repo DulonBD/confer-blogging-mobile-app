@@ -29,7 +29,7 @@ export class SignUpPage{
             dob: ''
         };
       
-        this.http.post<{status: boolean}>('http://localhost:3000/confer/users/', user)
+        this.http.post<{status: boolean}>('https://appconfer.herokuapp.com/confer/users/', user)
         .subscribe((res) => {
             if(res.status) {
                 this.stopLoading();

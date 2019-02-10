@@ -36,7 +36,7 @@ export class SignUpServicePage {
                 password: credentials.password
             };
           
-            this.http.post<{status: string}>('http://localhost:3000/confer/users/', user)
+            this.http.post<{status: string}>('https://appconfer.herokuapp.com/confer/users/', user)
             .subscribe((res) => {
                 if(res.status) {
                     return Observable.create(observer => {
