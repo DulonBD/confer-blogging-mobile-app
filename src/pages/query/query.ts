@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { QueryServicePage } from "../../services/query-service";
 import { SingleQueryPage } from "./single-query/single-query";
-import { NavController } from "ionic-angular";
+import { NavController, LoadingController, Loading } from "ionic-angular";
 import { ProfileShowPage } from "../profile/profile-show/profile-show";
 import { AuthServiceProvider } from "../../services/auth.service";
 import { ProfileServicePage } from "../../services/profile-service";
@@ -17,20 +17,24 @@ export class QueryPage implements OnInit {
     profile;
     question = {title:'', detail:'', tags: ''};
     singleQueryPage = SingleQueryPage;
+    loading: Loading;
 
     constructor(
         public queryService: QueryServicePage,
         public navCtrl: NavController,
         public auth: AuthServiceProvider,
-        public profileService: ProfileServicePage
+        public profileService: ProfileServicePage,
+        public loadingCtrl: LoadingController
     ) {}
     
     ngOnInit() {
+        this.showLoading();
         this.queryService.getQuestions()
         .subscribe(val => {
             this.query = val.response;
             console.log(this.query);
         });
+        this.stopLoading();
     }
 
     addQuestion() {
@@ -76,5 +80,20 @@ export class QueryPage implements OnInit {
 
     goToProfile() {
         this.navCtrl.push(ProfileShowPage);
+    }
+
+    showLoading() {
+        this.loading = this.loadingCtrl.create({
+          content: `<img src="./../../assets/imgs/loader.gif"/>`,
+          spinner: 'hide',
+          cssClass: 'my-loading-class',
+          dismissOnPageChange: true
+        });
+        this.loading.present();
+        this.loading.present();
+    }
+    
+    stopLoading() {
+        this.loading.dismiss();
     }
 }

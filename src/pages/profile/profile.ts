@@ -23,10 +23,12 @@ export class ProfilePage {
         public auth: AuthServiceProvider,
         public loadingCtrl: LoadingController
     ){
+        this.showLoading();
         this.profileService.getProfile(this.auth.getUserInfo().email)
         .subscribe(res => {
             this.profile = res.response;
         });
+        this.stopLoading();
     }
 
     openModal() {

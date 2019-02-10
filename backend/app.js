@@ -97,6 +97,18 @@ app.post('/confer/question/', (req, res, next) => {
   });
 });
 
+// Get Question Details
+app.get('/confer/question/:id', (req, res, next) => {
+  qus.findOne({_id: req.params.id}).then(documents => {
+    res.status(200).json({
+      response: documents
+    });
+  })
+  .catch(err => {
+    console.log(err);
+  });
+});
+
 // Get All Question
 app.get('/confer/questions/', (req, res, next) => {
   qus.find().sort({ time: -1 }).then(documents => {
