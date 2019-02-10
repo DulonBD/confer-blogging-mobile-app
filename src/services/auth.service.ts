@@ -33,7 +33,7 @@ export class AuthServiceProvider {
 
   setUser(email) {
     // this.currentUser = new User(name, email, bio, dept, batch, dob, tags, posts, answers);
-    this.http.get<{response: any}>('http://localhost:3000/confer/users/'+ email)
+    this.http.get<{response: any}>('https://appconfer.herokuapp.com/confer/users/'+ email)
     .subscribe(res => {
       this.currentUser = new User (
         res.response.name,
