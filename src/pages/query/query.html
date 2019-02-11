@@ -27,7 +27,6 @@
                 <li>
                     <h2><b>{{que.title}}</b></h2><br>
                     <p>{{que.detail}}</p>
-                    <img src="../../assets/imgs/card-img.jpg" alt="image">
                 </li>
             </ul>
             <ion-row class="desc-content">
@@ -65,8 +64,6 @@
                 <ion-input name="title" placeholder="Title" [(ngModel)]="question.title" required></ion-input><br>
 
                 <ion-textarea name="detail" placeholder="Add Your Question?" [(ngModel)]="question.detail" required></ion-textarea><br>
-
-                <ion-input type="file" placeholder="add image"></ion-input><br>
 
                 <p>Separate by comma. Ex: Confer, Country, Social</p>
                 <ion-input name="tags" placeholder="Tags" [(ngModel)]="question.tags" required></ion-input><br>

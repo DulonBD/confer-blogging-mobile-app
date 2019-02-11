@@ -18,4 +18,10 @@ export class QueryServicePage{
 
         return this.http.post<{status: boolean}>('https://appconfer.herokuapp.com/confer/question/', qus);
     }
+
+    addComment(id, comm, name, email) {
+        const com = {postid: id, comment: comm, user: name, email: email};
+
+        return this.http.post<{status: boolean}>('https://appconfer.herokuapp.com/confer/comment/', com);
+    }
 }

@@ -10,6 +10,7 @@ import { ProfileServicePage } from "../../../services/profile-service";
 })
 export class SingleQueryPage {
     querydts = [];
+    comm;
     username;
     loading: Loading;
     constructor (
@@ -25,10 +26,10 @@ export class SingleQueryPage {
     }
 
     getDts() {
-        this.queryService.getQuestionDts(this.navParams.data)
-        .subscribe(val => {
+        this.queryService.getQuestionDts(this.navParams.data.val)
+        .subscribe(res => {
+            this.querydts = res.response;
             console.log(this.querydts);
-            this.querydts = val.response;
         });
         this.stopLoading();
     }
@@ -56,6 +57,15 @@ export class SingleQueryPage {
         });
 
         return this.username;
+    }
+
+    addComments() {
+        this.queryService.addComment(this.navParams.data.val, this.comm, this.auth.getUserInfo().name, this.auth.getUserInfo().email);
+        this.comm = '';
+    }
+
+    getComments(id, ) {
+        //console.log(comments);
     }
 
     showLoading() {

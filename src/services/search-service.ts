@@ -1,19 +1,15 @@
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+
+@Injectable()
 export class SearchServicePage {
-    suggestions = [
-        {
-            image: 'avatar-2',
-            name: 'Faruk Omar',
-            bio: 'why so serious'
-        },
-        {
-            image: 'avatar-3',
-            name: 'Dulon Das',
-            bio: 'header is my thing.'
-        },
-        {
-            image: 'avatar-4',
-            name: 'Abrar Ovi',
-            bio: 'I am in defense.'
-        }
-    ]
+    constructor(private http: HttpClient) {}
+    
+    searchQus(key) {
+        return this.http.get<{response: any}>('https://appconfer.herokuapp.com/confer/searchqs/'+key);
+    }
+
+    searchPro(key) {
+        return this.http.get<{response: any}>('https://appconfer.herokuapp.com/confer/searchpro/'+key);
+    }
 }

@@ -2,7 +2,7 @@
 
   <ion-navbar>
     <ion-title>
-          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+          <ion-searchbar name="search" [(ngModel)]="search" (change)="onChange()"></ion-searchbar>
     </ion-title>
   </ion-navbar>
 
@@ -11,22 +11,22 @@
 <ion-content>
 
     
-    <p>Querys For "Search Result"</p><hr>
-    <ion-list *ngFor="let suggestion of suggestions" no-padding>
+    <p>Querys For "{{search}}"</p><hr>
+    <ion-list *ngFor="let qus of questions" no-padding>
         <ion-item>
-          <h2>There will be question Title</h2>
-          <p>24 Helpful || 13 Comments</p>
+          <h2>{{qus.title}}</h2>
+          <p>Helpful || Comments</p>
         </ion-item>
     </ion-list>
 
-    <p>Profiles For "Search Result"</p><hr>
-    <ion-list *ngFor="let suggestion of suggestions" no-padding>
+    <p>Profiles For "{{search}}"</p><hr>
+    <ion-list *ngFor="let pro of profiles" no-padding>
         <ion-item>
           <ion-avatar item-start>
-            <img src="../../assets/imgs/{{suggestion.image}}.png" alt="image">
+            <img src="../../assets/imgs/avatar-3.png" alt="image">
           </ion-avatar>
-          <h2>{{suggestion.name}}</h2>
-          <p>{{suggestion.bio}}</p>
+          <h2>{{pro.name}}</h2>
+          <p>{{pro.bio}}</p>
           <ion-note item-end>
             <button ion-button (click)="goToProfile()">
               View-Profile

@@ -3,6 +3,7 @@ const bodyParser  = require('body-parser');
 const mongoose    = require('mongoose');
 const User        = require('./models/users');
 const qus         = require('./models/question');
+const com         = require('./models/comment');
 
 const app = express();
 
@@ -121,8 +122,36 @@ app.get('/confer/questions/', (req, res, next) => {
   });
 });
 
-// Search
-app.get('/confab/search/:value', (req, res, next) => {
+// Added Comment
+app.post('/confer/comment/', (req, res, next) => {
+  const comment = new com({
+    postid: req.body.postid,
+    comment: req.body.comment,
+    user: req.body.user,
+    email: req.body.email
+  });
+  comment.save().then(createdUser => {
+    res.status(201).json({
+      status: true
+    });
+  });
+});
+
+// Search question
+app.get('/confer/searchqs/:value', (req, res, next) => {
+  qus.find({title: {$regex: '/*' + req.params.value + '/*'}}).then(response => {
+    res.status(200).json({
+      message: "Search Request Goted",
+      info: response
+    });
+  })
+  .catch(err => {
+    console.log(err);
+  });
+});
+
+// Search Profile
+app.get('/confer/searchpro/:value', (req, res, next) => {
   User.find({name: {$regex: '/*' + req.params.value + '/*'}}).then(response => {
     res.status(200).json({
       message: "Search Request Goted",

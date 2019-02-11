@@ -11,11 +11,10 @@
             <ion-avatar item-start>
                 <img src="../../assets/imgs/avatar-1.png">
             </ion-avatar>
-            <h2>{{getUserProfile(querydts.email)}}</h2>
-            <ion-note>
-                <!-- {{getTime(querydts.time)}} -->
-                time
-            </ion-note>
+            <h2>
+                <!-- {{getUserProfile(querydts.email)}} -->
+                Dulon
+            </h2>
         </ion-item>
         <hr>
         
@@ -24,7 +23,6 @@
                 <li>
                     <h2><b>{{querydts.title}}</b></h2><br>
                     <p>{{querydts.detail}}</p>
-                    <img src="../../../assets/imgs/avatar-1.png" alt="" srcset="">
                 </li>
             </ul>
             <ion-row class="desc-content">
@@ -55,9 +53,9 @@
 
         <div padding class="comment-sec">
             <ion-list>
-                <ion-input type="text" value="" placeholder="Add a answer"></ion-input>
+                <ion-input type="text" [(ngModel)]="comm" placeholder="Add a answer"></ion-input>
             </ion-list>
-            <button class="add-on-btn"> Add </button>
+            <button class="add-on-btn" (click)="addComments()"> Add </button>
             <br>
             <hr> 
             <div class="comments">
