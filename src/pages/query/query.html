@@ -22,7 +22,7 @@
         </ion-item>
         <hr>
         
-        <ion-card-content [navPush]="singleQueryPage" [navParams]="que._id">
+        <ion-card-content (click)="goToQuestion(que._id)">
             <ul>
                 <li>
                     <h2><b>{{que.title}}</b></h2><br>

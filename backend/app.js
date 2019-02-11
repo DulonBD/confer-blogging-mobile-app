@@ -6,7 +6,7 @@ const qus         = require('./models/question');
 
 const app = express();
 
-mongoose.connect("mongodb+srv://azharul:8sWQpET1q2yMm2Fn@cluster0-hflbv.mongodb.net/confer?retryWrites=true", { useNewUrlParser: true })
+mongoose.connect("mongodb+srv://dulon:VzoVDny7Xt2Bf4Yq@cluster0-7pnby.mongodb.net/confer?retryWrites=true", { useNewUrlParser: true })
   .then(() => {
     console.log('Connected To Database!!');
   }).catch(() => {
@@ -121,7 +121,7 @@ app.get('/confer/questions/', (req, res, next) => {
   });
 });
 
-// Search People
+// Search
 app.get('/confab/search/:value', (req, res, next) => {
   User.find({name: {$regex: '/*' + req.params.value + '/*'}}).then(response => {
     res.status(200).json({

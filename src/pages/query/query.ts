@@ -82,6 +82,11 @@ export class QueryPage implements OnInit {
         this.navCtrl.push(ProfileShowPage);
     }
 
+    goToQuestion(val) {
+        this.navCtrl.push(SingleQueryPage, val);
+        console.log(val);
+    }
+
     showLoading() {
         this.loading = this.loadingCtrl.create({
           content: `<img src="./../../assets/imgs/loader.gif"/>`,

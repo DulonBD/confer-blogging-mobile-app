@@ -9,11 +9,12 @@
     <ion-card  class="cards-bg social-cards">
         <ion-item>
             <ion-avatar item-start>
-                <img src="../../assets/imgs/{{query.image}}.png">
+                <img src="../../assets/imgs/avatar-1.png">
             </ion-avatar>
-            <h2>{{getUserProfile(query.email)}}</h2>
+            <h2>{{getUserProfile(querydts.email)}}</h2>
             <ion-note>
-                {{getTime(query.time)}}
+                <!-- {{getTime(querydts.time)}} -->
+                time
             </ion-note>
         </ion-item>
         <hr>
@@ -21,8 +22,8 @@
         <ion-card-content>
             <ul>
                 <li>
-                    <h2><b>{{query.title}}</b></h2><br>
-                    <p>{{query.detail}}</p>
+                    <h2><b>{{querydts.title}}</b></h2><br>
+                    <p>{{querydts.detail}}</p>
                     <img src="../../../assets/imgs/avatar-1.png" alt="" srcset="">
                 </li>
             </ul>
@@ -30,7 +31,7 @@
                 <ion-col>
                     <ul>
                         <li>
-                            <span class="tags" *ngFor="let tag of query.tags">{{ tag }}</span>
+                            <span class="tags" *ngFor="let tag of querydts.tags">{{ tag }}</span>
                         </li>
                     </ul>
                 </ion-col>
@@ -41,13 +42,13 @@
             <ion-col>
                 <button ion-button color="primary" clear small icon-start>
                     <ion-icon name='thumbs-up'></ion-icon>
-                    {{query.helpfull}} Helpfull
+                    {{querydts.helpfull}} Helpfull
                 </button>
                 <button ion-button color="primary" clear small icon-start  
-                [navPush]="singleQueryPage" 
+                [navPush]="singleQueryPage"
                 [navParams]="query">
                 <ion-icon name='text'></ion-icon>
-                    {{query.answer}} Answers
+                    {{querydts.answer}} Answers
                 </button>
             </ion-col>
         </ion-row>
@@ -64,11 +65,11 @@
                     <ion-avatar item-start>
                         <img src="../../assets/imgs/user-img/client-03.jpg">
                     </ion-avatar>
-                    <h2>{{query.name}}</h2>
-                    <p>{{query.date.month}} {{query.date.day}}, {{query.date.year}}</p>
+                    <h2>username</h2>
+                    <p>time</p>
                 </ion-item>
                 <div class="comment-item">
-                    <p>{{query.postComment}}</p>
+                    <p>comment</p>
                 </div>
             </div>
             <hr>

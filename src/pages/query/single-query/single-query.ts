@@ -1,6 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { NavController, NavParams, LoadingController, Loading } from "ionic-angular";
-import { ProfileShowPage } from "../../profile/profile-show/profile-show";
 import { AuthServiceProvider } from "../../../services/auth.service";
 import { QueryServicePage } from "../../../services/query-service";
 import { ProfileServicePage } from "../../../services/profile-service";
@@ -9,8 +8,8 @@ import { ProfileServicePage } from "../../../services/profile-service";
     selector: 'page-single-query',
     templateUrl: 'single-query.html',
 })
-export class SingleQueryPage implements OnInit{
-    query = [];
+export class SingleQueryPage {
+    querydts = [];
     username;
     loading: Loading;
     constructor (
@@ -20,17 +19,23 @@ export class SingleQueryPage implements OnInit{
         public auth: AuthServiceProvider,
         public profileService: ProfileServicePage,
         public loadingCtrl: LoadingController
-    ){}
+    ){
+        this.showLoading();
+        this.getDts();
+    }
 
-    ngOnInit() {
+    getDts() {
         this.queryService.getQuestionDts(this.navParams.data)
         .subscribe(val => {
-            this.query = val.response;
-            console.log(this.query);
+            console.log(this.querydts);
+            this.querydts = val.response;
         });
+        this.stopLoading();
     }
 
     getTime(res) {
+        console.log(res);
+        
         const resDate = res.split('T', 1);
         const resDate1 = new Date(resDate);
         const today = new Date();
