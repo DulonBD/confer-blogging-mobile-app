@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { SearchServicePage } from '../../services/search-service';
 import { ProfileShowPage } from '../profile/profile-show/profile-show';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-search',
@@ -13,18 +13,22 @@ export class SearchPage {
   search;
 
   constructor(public navCtrl: NavController, 
-    public navParams: NavParams, 
-    private srcService: SearchServicePage ) {}
+    public navParams: NavParams,
+    private http: HttpClient ) {}
   
     onChange() {
-        this.srcService.searchQus(this.search)
+        console.log(this.search);
+
+        this.http.get<{message: string, info: any}>('https://appconfer.herokuapp.com/confer/searchqs/'+this.search)
         .subscribe(res => {
-            this.questions = res.response;
+            this.questions = res.info;
+            console.log(res.message);
         });
 
-        this.srcService.searchPro(this.search)
+        this.http.get<{message: string, info: any}>('https://appconfer.herokuapp.com/confer/searchpro/'+this.search)
         .subscribe(val => {
-            this.profiles = val.response;
+            this.profiles = val.info;
+            console.log(val.message);
         });
     }
   

@@ -62,4 +62,12 @@ export class ProfilePage {
     stopLoading() {
         this.loading.dismiss();
     }
+
+    doRefresh(event) {
+        this.profileService.getProfile(this.auth.getUserInfo().email)
+        .subscribe(res => {
+            this.profile = res.response;
+            event.complete();
+        });
+    }
 }

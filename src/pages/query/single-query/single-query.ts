@@ -26,7 +26,7 @@ export class SingleQueryPage {
     }
 
     getDts() {
-        this.queryService.getQuestionDts(this.navParams.data.val)
+        this.queryService.getQuestionDts(this.navParams.data)
         .subscribe(res => {
             this.querydts = res.response;
             console.log(this.querydts);
@@ -60,7 +60,7 @@ export class SingleQueryPage {
     }
 
     addComments() {
-        this.queryService.addComment(this.navParams.data.val, this.comm, this.auth.getUserInfo().name, this.auth.getUserInfo().email);
+        this.queryService.addComment(this.navParams.data, this.comm, this.auth.getUserInfo().name, this.auth.getUserInfo().email);
         this.comm = '';
     }
 
@@ -81,5 +81,13 @@ export class SingleQueryPage {
     
     stopLoading() {
         this.loading.dismiss();
+    }
+
+    doRefresh(event) {
+        this.queryService.getQuestionDts(this.navParams.data)
+        .subscribe(res => {
+            this.querydts = res.response;
+            event.complete();
+        });
     }
 }

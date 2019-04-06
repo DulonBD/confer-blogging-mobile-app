@@ -83,8 +83,8 @@ export class QueryPage implements OnInit {
     }
 
     goToQuestion(val) {
-        this.navCtrl.push(SingleQueryPage, val);
         console.log(val);
+        this.navCtrl.push(SingleQueryPage, val);
     }
 
     showLoading() {
@@ -100,5 +100,13 @@ export class QueryPage implements OnInit {
     
     stopLoading() {
         this.loading.dismiss();
+    }
+
+    doRefresh(event) {
+        this.queryService.getQuestions()
+        .subscribe(val => {
+            this.query = val.response;
+            event.complete();
+        });
     }
 }
